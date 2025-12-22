@@ -36,7 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const canvas = await html2canvas(container, {
             scale: 2,
             useCORS: true,
-            backgroundColor: "#ffffff"
+            backgroundColor: "#ffffff",
+            windowWidth: container.scrollWidth,
+            windowHeight: container.scrollHeight,
+            scrollX: 0,
+            scrollY: -window.scrollY
         });
 
         const imgData = canvas.toDataURL("image/jpeg", 0.95);
@@ -44,20 +48,26 @@ document.addEventListener("DOMContentLoaded", () => {
         // ===============================
         // 3. GERAR PDF
         // ===============================
-        const pdf = new jsPDF({
-            orientation: "p",
-            unit: "px",
-            format: [canvas.width, canvas.height]
-        });
+        const pdf = new jsPDF("p", "mm", "a4");
 
-        pdf.addImage(
-            imgData,
-            "JPEG",
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+
+        const imgWidth = pageWidth;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        let heightLeft = imgHeight;
+        let position = 0;
+
+        pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        while (heightLeft > 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+        }
 
         pdf.save("projeto.pdf");
 

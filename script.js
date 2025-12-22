@@ -1,155 +1,79 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const botao = document.getElementById("submitBtn");
+  const botao = document.getElementById("submitBtn");
 
-    botao.addEventListener("click", async () => {
+  botao.addEventListener("click", async () => {
 
-        // Verifica se jsPDF está carregado
-        if (!window.jspdf) {
-            alert("Erro: jsPDF não foi carregado.");
-            return;
-        }
+    if (!window.jspdf || !window.html2canvas) {
+      alert("Erro ao carregar bibliotecas.");
+      return;
+    }
 
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF("p", "mm", "a4");
+    const { jsPDF } = window.jspdf;
 
-        // ===============================
-        // CAPTURA DOS TEXTOS
-        // ===============================
-        let y = 20;
+    // ===============================
+    // 1. ESCONDER IMAGENS NÃO SELECIONADAS
+    // ===============================
+    const imagensNaoSelecionadas = document.querySelectorAll(
+      '.image-options input[type="checkbox"]:not(:checked)'
+    );
 
-        // ===============================
-        // TÍTULO E DESCRIÇÃO (INPUTS)
-        // ===============================
-        const title = document.getElementById("title").value || "Projeto";
-        const description = document.getElementById("description").value || "";
+    const elementosOcultos = [];
 
-        doc.setFontSize(20);
-        doc.text(title, 10, y);
-        y += 12;
-
-        doc.setFontSize(12);
-        doc.text(description, 10, y, { maxWidth: 190 });
-        y += 15;
-
-        // ===============================
-        // TEXTOS FIXOS DA PÁGINA
-        // ===============================
-        const sections = document.querySelectorAll(".section");
-
-        for (const section of sections) {
-
-            // Quebra de página preventiva
-            if (y > 270) {
-                doc.addPage();
-                y = 20;
-            }
-
-            // ---------- h2 ----------
-            const h2 = section.querySelector("h2");
-            if (h2) {
-                doc.setFontSize(16);
-                doc.text(h2.innerText, 10, y);
-                y += 8;
-            }
-
-            // ---------- h3 ----------
-            const h3s = section.querySelectorAll("h3");
-            for (const h3 of h3s) {
-                doc.setFontSize(13);
-                doc.text(h3.innerText, 12, y);
-                y += 7;
-
-                if (y > 270) {
-                    doc.addPage();
-                    y = 20;
-                }
-            }
-
-            // ---------- p ----------
-            const paragraphs = section.querySelectorAll("p");
-            doc.setFontSize(11);
-
-            for (const p of paragraphs) {
-                doc.text(p.innerText, 12, y, { maxWidth: 186 });
-                y += 6;
-
-                if (y > 270) {
-                    doc.addPage();
-                    y = 20;
-                }
-            }
-
-            y += 8; // espaço entre seções
-        }
-
-        // ===============================
-        // CAPTURA DAS IMAGENS SELECIONADAS
-        // ===============================
-        let encontrouImagem = false;
-
-        for (let passo = 1; passo <= 10; passo++) {
-
-            const imagens = document.querySelectorAll(
-                `input[name="images${passo}"]:checked`
-            );
-
-            if (imagens.length === 0) continue;
-
-            encontrouImagem = true;
-
-            // TÍTULO DO PASSO
-            doc.setFontSize(14);
-            doc.text(`Passo ${passo}`, 10, y);
-            y += 8;
-
-            for (const checkbox of imagens) {
-
-                const img = new Image();
-                img.src = "img/" + checkbox.value;
-
-                // Aguarda a imagem carregar
-                await img.decode();
-
-                // Converte imagem para base64
-                const canvas = document.createElement("canvas");
-                const ctx = canvas.getContext("2d");
-
-                canvas.width = img.width;
-                canvas.height = img.height;
-                ctx.drawImage(img, 0, 0);
-
-                const imgData = canvas.toDataURL("image/jpeg", 0.9);
-
-                // Quebra de página automática
-                if (y + 65 > 280) {
-                    doc.addPage();
-                    y = 20;
-                }
-
-                // Adiciona imagem ao PDF
-                doc.addImage(imgData, "JPEG", 10, y, 60, 60);
-                y += 65;
-            }
-
-            y += 5;
-        }
-
-        // ===============================
-        // VALIDAÇÃO FINAL
-        // ===============================
-        if (!encontrouImagem) {
-            alert("Selecione pelo menos uma imagem para gerar o PDF.");
-            return;
-        }
-
-        // ===============================
-        // SALVAR PDF
-        // ===============================
-        doc.save("projeto.pdf");
-
+    imagensNaoSelecionadas.forEach(cb => {
+      const img = cb.closest("label")?.querySelector("img");
+      if (img) {
+        elementosOcultos.push({ img, display: img.style.display });
+        img.style.display = "none";
+      }
     });
 
+    // ===============================
+    // 2. RENDERIZAR A PÁGINA COMO IMAGEM
+    // ===============================
+    const container = document.querySelector(".container");
+
+    const canvas = await html2canvas(container, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: "#ffffff"
+    });
+
+    const imgData = canvas.toDataURL("image/jpeg", 0.95);
+
+    // ===============================
+    // 3. GERAR PDF
+    // ===============================
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+
+    const imgWidth = pageWidth;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    let heightLeft = imgHeight;
+    let position = 0;
+
+    pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+    heightLeft -= pageHeight;
+
+    while (heightLeft > 0) {
+      position = heightLeft - imgHeight;
+      pdf.addPage();
+      pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+    }
+
+    pdf.save("projeto.pdf");
+
+    // ===============================
+    // 4. RESTAURAR IMAGENS OCULTAS
+    // ===============================
+    elementosOcultos.forEach(({ img, display }) => {
+      img.style.display = display;
+    });
+
+  });
+
 });
-
-

@@ -16,72 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
         // ===============================
         // CAPTURA DOS TEXTOS
         // ===============================
-let y = 20;
+        const title = document.getElementById("title").value || "Projeto";
+        const description = document.getElementById("description").value || "";
 
-// ===============================
-// TÍTULO E DESCRIÇÃO (INPUTS)
-// ===============================
-const title = document.getElementById("title").value || "Projeto";
-const description = document.getElementById("description").value || "";
+        let y = 20;
 
-doc.setFontSize(20);
-doc.text(title, 10, y);
-y += 12;
+        // TÍTULO
+        doc.setFontSize(20);
+        doc.text(title, 10, y);
+        y += 10;
 
-doc.setFontSize(12);
-doc.text(description, 10, y, { maxWidth: 190 });
-y += 15;
-
-// ===============================
-// TEXTOS FIXOS DA PÁGINA
-// ===============================
-const sections = document.querySelectorAll(".section");
-
-for (const section of sections) {
-
-  // Quebra de página preventiva
-  if (y > 270) {
-    doc.addPage();
-    y = 20;
-  }
-
-  // ---------- h2 ----------
-  const h2 = section.querySelector("h2");
-  if (h2) {
-    doc.setFontSize(16);
-    doc.text(h2.innerText, 10, y);
-    y += 8;
-  }
-
-  // ---------- h3 ----------
-  const h3s = section.querySelectorAll("h3");
-  for (const h3 of h3s) {
-    doc.setFontSize(13);
-    doc.text(h3.innerText, 12, y);
-    y += 7;
-
-    if (y > 270) {
-      doc.addPage();
-      y = 20;
-    }
-  }
-
-  // ---------- p ----------
-  const paragraphs = section.querySelectorAll("p");
-  doc.setFontSize(11);
-
-  for (const p of paragraphs) {
-    doc.text(p.innerText, 12, y, { maxWidth: 186 });
-    y += 6;
-
-    if (y > 270) {
-      doc.addPage();
-      y = 20;
-    }
-  }
-
-  y += 8; // espaço entre seções
-}
+        // DESCRIÇÃO (com quebra automática de linha)
+        doc.setFontSize(12);
+        doc.text(description, 10, y, { maxWidth: 190 });
+        y += 15;
 
         // ===============================
         // CAPTURA DAS IMAGENS SELECIONADAS

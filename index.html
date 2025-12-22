@@ -2,822 +2,1140 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferramenta de Seleção de Imagens</title>
-    <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ferramenta de Seleção de Imagens</title>
+        <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <!-- Substitua o texto por uma imagem -->
+        <div class="container">
+                <div class="sections">
 
-        <div class="image-options">
-            <label><input type="checkbox" name="images4" value="imagens_img1.jpg" checked=""><img
-                    src="img/imagens_header-image.jpg" alt="Image 1"></label>
+                        <div class="image-options">
+                                <label><input type="checkbox" name="images4" value="imagens_img1.jpg" checked=""><img
+                                                src="img/imagens_header-image.jpg" alt="Image 1"></label>
+                        </div>
+
+                        <form id="imageForm">
+                                <div class="form-group">
+                                        <label for="title" class="form-label">Título do Projeto:</label>
+                                        <input type="text" id="title" name="title" class="form-input" required="">
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="description" class="form-label">Descrição do Projeto:</label>
+                                        <textarea id="description" name="description" class="form-textarea" required=""
+                                                style="height: 57px;"></textarea>
+                                </div>
+
+
+                                <script>
+                                        document.addEventListener("DOMContentLoaded", function () {
+                                                const textarea = document.getElementById('description');
+
+                                                function autoResize() {
+                                                        this.style.height = 'auto';
+                                                        this.style.height = this.scrollHeight + 'px';
+                                                }
+
+                                                textarea.addEventListener('input', autoResize);
+                                                autoResize.call(textarea);
+                                        });
+                                </script>
+
+
+
+
+
+
+                                <!-- Seção para Passo 1 -->
+                                <div class="section" id="section1">
+                                        <h2 class="section-title">Conceito</h2>
+
+                                        <p>• Qual sentimento quero passar com a ilustração?</p>
+                                        <p>• Qual história quero contar?</p>
+                                        <p>• Qual a melhor maneira de transmitir isso?</p>
+                                        <p>• Quais símbolos estarão visíveis?</p>
+                                        <p>• Quais símbolos estarão ocultos?</p>
+                                        <p>• Quais objetos não podem faltar na ilustração?</p>
+                                        <p>• Quais objetos terão mais destaque na ilustração?</p>
+                                        <p>• Conceitos:</p>
+                                        <p>- Psicologia da forma (Definição dos sentimentos que a ilustração deve
+                                                passar)</p>
+                                        <p>- Semiótica</p>
+
+                                        <h3 class="subtitle">- Psicologia da forma</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img1.jpg"><img src="img/imagens_img1.jpg"
+                                                                alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img2.jpg"><img src="img/imagens_img2.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img3.jpg"><img src="img/imagens_img3.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img4.jpg"><img src="img/imagens_img4.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img5.jpg"><img src="img/imagens_img5.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img6.jpg"><img src="img/imagens_img6.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img7.jpg"><img src="img/imagens_img7.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img8.jpg"><img src="img/imagens_img8.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img9.jpg"><img src="img/imagens_img9.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/imagens_img10.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/imagens_img11.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/imagens_img12.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images1"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/imagens_img13.jpg" alt="Image 3"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Semiótica</h3>
+
+                                        <div class="image-options semiotica-options">
+                                                <label><input type="checkbox" name="images4"
+                                                                value="imagens_semiotica.jpg" checked=""><img
+                                                                src="img/imagens_semiotica.jpg" alt="Image 1">
+                                                </label>
+
+                                                <div class="semiose-alignment">
+                                                        <label><input type="checkbox" name="images1"
+                                                                        value="imagens_semiotica2.jpg"><img
+                                                                        src="img/imagens_semiotica2.jpg"
+                                                                        alt="Image 2"></label>
+                                                        <label><input type="checkbox" name="images1"
+                                                                        value="imagens_semiotica3.jpg"><img
+                                                                        src="img/imagens_semiotica3.jpg"
+                                                                        alt="Image 3"></label>
+                                                        <label><input type="checkbox" name="images1"
+                                                                        value="imagens_semiotica4.jpg"><img
+                                                                        src="img/imagens_semiotica4.jpg"
+                                                                        alt="Image 4"></label>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <!-- Seção para Passo 2 -->
+                                <div class="section" id="section2">
+                                        <h2 class="section-title">Arquivo e fechamento</h2>
+
+                                        <p>• Digital (RGB) ou impresso (CMYK)?</p>
+                                        <p>• Dimensões do arquivo?</p>
+                                        <p>• Sempre criar margens de segurança de +10 mm</p>
+                                        <p>• Sempre usar 300 dpi</p>
+                                        <p>• Adicionar 5 mm de sangria em cada lado (Impressão)</p>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_img14.jpg" alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_img15.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_img16.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_img17.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_img18.jpg" alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_img19.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_img20.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_img21.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img5.jpg"><img
+                                                                src="img/imagens_img22.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/imagens_img23.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/imagens_img24.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/imagens_img25.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/imagens_img26.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/imagens_img27.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/imagens_img28.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/imagens_img29.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/imagens_img30.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/imagens_img31.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/imagens_img32.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/imagens_img33.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/imagens_img34.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/imagens_img35.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/imagens_img36.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/imagens_img67.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/imagens_img68.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/imagens_img69.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/imagens_img70.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images2"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/imagens_img71.jpg" alt="Image 3"></label>
+                                        </div>
+                                </div>
+
+                                <!-- Seção para Passo 3 -->
+                                <div class="section" id="section3">
+                                        <h2 class="section-title">Composição</h2>
+
+                                        <p>• Como vou distribuir todos os elementos indispensáveis para a ilustração?
+                                        </p>
+                                        <p>• O que ficará mais visível</p>
+                                        <p>• O que ficará mais escondido?</p>
+                                        <p>• Quero algo mais parado ou mais movimentado?</p>
+                                        <p>• Conceitos:</p>
+                                        <p>- Equilíbrio visual</p>
+                                        <p>- Gestalt</p>
+                                        <p>- Hierarquia visual</p>
+
+                                        <h3 class="subtitle">- Equilíbrio visual</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images3"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_img37.jpg" alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images3"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_img38.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images3"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_img39.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images3"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_img40.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images3"
+                                                                value="imagens_img5.jpg"><img
+                                                                src="img/imagens_img41.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images3"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/imagens_img42.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images3"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/imagens_img43.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images3"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/imagens_img44.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images3"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/imagens_img45.jpg" alt="Image 3"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Gestalt</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images3" value="imagens_img1.jpg"
+                                                                checked=""><img src="img/imagens_gestalt.jpg"
+                                                                alt="Image 1"></label>
+
+                                                <h3 class="subtitle">- Hirarquia visual</h3>
+
+                                                <div class="image-options">
+                                                        <label><input type="checkbox" name="images3"
+                                                                        value="imagens_img1.jpg" checked=""><img
+                                                                        src="img/imagens_hierarquia visual.jpg"
+                                                                        alt="Image 1"></label>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <!-- Seção para Passo 4 -->
+                                <div class="section" id="section4">
+                                        <h2 class="section-title">Rascunho</h2>
+
+                                        <p>• Distribuição dos elementos principais</p>
+                                        <p>• Pensar em maneiras de deixar a ilustração ainda mais dinâmica e atrativa
+                                        </p>
+                                        <p>• Conceitos:</p>
+                                        <p>- Anatomia</p>
+                                        <p>- Proporções</p>
+                                        <p>- Criar movimento</p>
+                                        <p>- Formas diferentes para objetos diferentes</p>
+                                        <p>- Evitar tangência</p>
+                                        <p>- Criar silhueta</p>
+                                        <p>- Atmosfera</p>
+                                        <p>- Perspectiva</p>
+
+                                        <h3 class="subtitle">- rascunho</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images4" value="imagens_img1.jpg"
+                                                                checked=""><img src="img/imagens_rascunho.jpg"
+                                                                alt="Image 1"></label>
+
+                                                <h3 class="subtitle">- Pespectiva</h3>
+
+                                                <div class="image-options">
+                                                        <label><input type="checkbox" name="images4"
+                                                                        value="imagens_img1.jpg"><img
+                                                                        src="img/imagens_perspectiva1.jpg"
+                                                                        alt="Image 1"></label>
+                                                        <label><input type="checkbox" name="images4"
+                                                                        value="imagens_img2.jpg"><img
+                                                                        src="img/imagens_perspectiva2.jpg"
+                                                                        alt="Image 2"></label>
+                                                        <label><input type="checkbox" name="images4"
+                                                                        value="imagens_img3.jpg"><img
+                                                                        src="img/imagens_perspectiva3.jpg"
+                                                                        alt="Image 3"></label>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <!-- Seção para Passo 5 -->
+                                <div class="section" id="section5">
+                                        <h2 class="section-title">Line Art</h2>
+
+                                        <p>• Arte final</p>
+                                        <p>• Traços grossos e finos como se usasse pincel de nanquim para desenhar</p>
+                                        <p>• Traços com textura que represente um pincel no papel</p>
+                                        <p>• Manter quinas (não fazer traços muito arredondados)</p>
+                                        <p>• Usar camadas para separar a line art de cada objeto</p>
+                                        <p>• Colorir os traços de acordo com a cor usada no objeto</p>
+                                        <p>• Criar hachuras coloridas</p>
+
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images5" value="imagens_img1.jpg"
+                                                                checked=""><img src="img/imagens_lineart.jpg"
+                                                                alt="Image 1"></label>
+                                        </div>
+                                </div>
+
+                                <!-- Seção para Passo 6 -->
+                                <div class="section" id="section6">
+                                        <h2 class="section-title">Blocagem</h2>
+
+                                        <p>• Blocar partes do desenho para colorir de maneira mais prática e detalhada
+                                        </p>
+                                        <p>• Blocar partes do desenho para colorir de maneira mais prática e detalhada
+                                        </p>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images6" value="imagens_img1.jpg"
+                                                                checked=""><img src="img/imagens_blocagem.jpg"
+                                                                alt="Image 1"></label>
+                                        </div>
+                                </div>
+
+                                <!-- Seção para Passo 7 -->
+                                <div class="section" id="section7">
+                                        <h2 class="section-title">Textura</h2>
+
+                                        <p>• Adicionar textura antes de colorir</p>
+                                        <p>• Simular papel, tela etc.</p>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images7" value="imagens_img1.jpg"
+                                                                checked=""><img src="img/imagens_textura.jpg"
+                                                                alt="Image 1"></label>
+                                        </div>
+                                </div>
+
+                                <!-- Seção para Passo 8 -->
+                                <div class="section" id="section8">
+                                        <h2 class="section-title">Coloração</h2>
+
+                                        <p>• RGB ou CMYK</p>
+                                        <p>• Colorir de acordo com a definição do conceito</p>
+                                        <p>• Usar a textura ao meu favor</p>
+                                        <p>• Conceitos:</p>
+                                        <p>- Harmonia das cores</p>
+                                        <p>- Psicologia das cores</p>
+                                        <p>- Perspectiva tonal / atmosférica / aérea</p>
+                                        <p>- Paleta de cores</p>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_img46.jpg" alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_img47.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_img48.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_img49.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_img50.jpg" alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_img51.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_img52.jpg" alt="Image 3"
+                                                                id="main-image">
+                                                </label>
+                                                <div class="image-alignment">
+                                                        <div class="column">
+                                                                <label><input type="checkbox" name="images8"
+                                                                                value="imagens_semiotica2.jpg"><img
+                                                                                src="img/imagens_harmonia.jpg"
+                                                                                alt="Harmonia"></label>
+                                                                <label><input type="checkbox" name="images8"
+                                                                                value="imagens_semiotica3.jpg"><img
+                                                                                src="img/imagens_contraste.jpg"
+                                                                                alt="Contraste"></label>
+                                                        </div>
+                                                        <div class="column">
+                                                                <label><input type="checkbox" name="images8"
+                                                                                value="imagens_semiotica4.jpg"><img
+                                                                                src="img/imagens_fundo claro.jpg"
+                                                                                alt="Fundo Claro"></label>
+                                                                <label><input type="checkbox" name="images8"
+                                                                                value="imagens_semiotica4.jpg"><img
+                                                                                src="img/imagens_fundo escuro.jpg"
+                                                                                alt="Fundo Escuro"></label>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/imagens_img55.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/imagens_img56.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/imagens_img57.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/imagens_img58.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/imagens_img59.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/imagens_img60.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/imagens_img61.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/imagens_img62.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/imagens_img63.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/imagens_img64.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/imagens_img65.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/imagens_img66.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Azul</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_azul1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_azul2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_azul3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_azul4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_azul5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_azul6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_azul7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_azul8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_azul9.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_azul10.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_azul11.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_azul12.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_azul13.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_azul14.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_azul15.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_azul16.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_azul17.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_azul18.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Vermelho</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_vermelho1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_vermelho2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_vermelho3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_vermelho4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_vermelho5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_vermelho6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_vermelho7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_vermelho8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_vermelho9.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_vermelho10.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_vermelho11.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_vermelho12.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_vermelho13.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_vermelho14.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_vermelho15.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_vermelho16.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_vermelho17.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_vermelho18.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Amarelo</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_amarelo1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_amarelo2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_amarelo3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_amarelo4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_amarelo5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_amarelo6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_amarelo7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_amarelo8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_amarelo9.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Verde</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_Verde1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_Verde2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Verde3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_Verde4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_Verde5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_Verde6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_Verde7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_Verde8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Verde9.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Branco</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_Branco1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_Branco2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Branco3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_Branco4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_Branco5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_Branco6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_Branco7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_Branco8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Branco9.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Cinza</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_Cinza1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_Cinza2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Cinza3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_Cinza4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_Cinza5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_Cinza6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_Cinza7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_Cinza8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Cinza9.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Violeta</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_Violeta1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_Violeta2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Violeta3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_Violeta4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_Violeta5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_Violeta6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_Violeta7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_Violeta8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Violeta9.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Rosa</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_Rosa1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_Rosa2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Rosa3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_Rosa4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_Rosa5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_Rosa6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_Rosa7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_Rosa8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Rosa9.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Laranja</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_Laranja1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_Laranja2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Laranja3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_Laranja4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_Laranja5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_Laranja6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_Laranja7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_Laranja8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Laranja9.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Marrom</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_Marrom1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_Marrom2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Marrom3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_Marrom4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_Marrom5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_Marrom6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_Marrom7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_Marrom8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Marrom9.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Ouro prata</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_Ouro prata1.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_Ouro prata2.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Ouro prata3.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_Ouro prata4.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_Ouro prata5.jpg" alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_Ouro prata6.jpg" alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_Ouro prata7.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_Ouro prata8.jpg" alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Ouro prata9.jpg" alt="Image 2"></label>
+                                        </div>
+
+                                        <h3 class="subtitle">- Psicologicamente opostas</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img6.jpg"><img
+                                                                src="img/paletas_Psicologicamente opostas1.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img7.jpg"><img
+                                                                src="img/paletas_Psicologicamente opostas2.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Psicologicamente opostas3.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img9.jpg"><img
+                                                                src="img/paletas_Psicologicamente opostas4.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img10.jpg"><img
+                                                                src="img/paletas_Psicologicamente opostas5.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img11.jpg"><img
+                                                                src="img/paletas_Psicologicamente opostas6.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img12.jpg"><img
+                                                                src="img/paletas_Psicologicamente opostas7.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img13.jpg"><img
+                                                                src="img/paletas_Psicologicamente opostas8.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Psicologicamente opostas9.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images8"
+                                                                value="imagens_img8.jpg"><img
+                                                                src="img/paletas_Psicologicamente opostas10.jpg"
+                                                                alt="Image 2"></label>
+                                        </div>
+                                </div>
+
+                                <!-- Seção para Passo 9 -->
+                                <div class="section" id="section9">
+                                        <h2 class="section-title">Luz e sombra</h2>
+
+                                        <p>• Respeitar o tipo de pintura feita no desenho (se o desenho tiver
+                                                cor chapada, sem degradê, fazer a luz também chapada e com pinceis
+                                                mais duros. O mesmo para o oposto)</p>
+                                        <p>• Escala de valor tonal usando a paleta de cores</p>
+                                        <p>• Usar luzes coloridas para deixar a arte mais interessante</p>
+                                        <p>• Texturizar a luz</p>
+                                        <p>• Usar brilho</p>
+                                        <p>• Usar a luz para destacar objetos</p>
+                                        <p>• Objetos refletem suas cores em outros objetos</p>
+                                        <p>• Inventar e pensar em maneiras de deixar a luz mais atraente.</p>
+
+                                        <h3 class="subtitle">- Direção da luz</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_luz e sombra1.jpg"
+                                                                alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_luz e sombra2.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_luz e sombra3.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_luz e sombra4.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_luz e sombra5.jpg"
+                                                                alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_luz e sombra6.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_luz e sombra7.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_luz e sombra8.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_luz e sombra18.jpg"
+                                                                alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_luz e sombra19.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_luz e sombra20.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_luz e sombra21.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_luz e sombra22.jpg"
+                                                                alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_luz e sombra23.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_luz e sombra24.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_luz e sombra25.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_luz e sombra26.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_luz e sombra27.jpg"
+                                                                alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_luz e sombra28.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_luz e sombra29.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_luz e sombra30.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_luz e sombra31.jpg"
+                                                                alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_luz e sombra32.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_luz e sombra33.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_luz e sombra34.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_luz e sombra35.jpg"
+                                                                alt="Image 4"></label>
+
+
+                                        </div>
+
+                                        <h3 class="subtitle">- Tipo de luz</h3>
+
+                                        <div class="image-options">
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_luz e sombra9.jpg"
+                                                                alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_luz e sombra10.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_luz e sombra11.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_luz e sombra12.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_luz e sombra13.jpg"
+                                                                alt="Image 3"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img4.jpg"><img
+                                                                src="img/imagens_luz e sombra14.jpg"
+                                                                alt="Image 4"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img1.jpg"><img
+                                                                src="img/imagens_luz e sombra15.jpg"
+                                                                alt="Image 1"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img2.jpg"><img
+                                                                src="img/imagens_luz e sombra16.jpg"
+                                                                alt="Image 2"></label>
+                                                <label><input type="checkbox" name="images9"
+                                                                value="imagens_img3.jpg"><img
+                                                                src="img/imagens_luz e sombra17.jpg"
+                                                                alt="Image 3"></label>
+                                        </div>
+                                </div>
+
+                                <h3 class="subtitle">- Atmosfera tonal</h3>
+
+                                <div class="image-options">
+                                        <label><input type="checkbox" name="images9" value="imagens_img1.jpg"
+                                                        checked=""><img src="img/imagens_perspectiva tonal.jpg"
+                                                        alt="Image 1"></label>
+
+                                </div>
+
+                                <h3 class="subtitle">- Princípios do design</h3>
+
+                                <div class="image-options">
+                                        <label><input type="checkbox" name="images9" value="imagens_img1.jpg"
+                                                        checked=""><img src="img/imagens_footer-image.jpg"
+                                                        alt="Image 1"></label>
+                                </div>
+
+
+                        </form>
+                </div>
+                
+                <button type="button" id="submitBtn" class="submit-button">Gerar PDF</button>
+
         </div>
 
-        <form id="imageForm">
-            <div class="form-group">
-                <label for="title" class="form-label">Título do Projeto:</label>
-                <input type="text" id="title" name="title" class="form-input" required="">
-            </div>
-
-            <div class="form-group">
-                <label for="description" class="form-label">Descrição do Projeto:</label>
-                <textarea id="description" name="description" class="form-textarea" required=""
-                    style="height: 57px;"></textarea>
-            </div>
-
-
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const textarea = document.getElementById('description');
-
-                    function autoResize() {
-                        this.style.height = 'auto';
-                        this.style.height = this.scrollHeight + 'px';
-                    }
-
-                    textarea.addEventListener('input', autoResize);
-                    autoResize.call(textarea);
-                });
-            </script>
-
-
-
-
-            <div class="sections">
-
-                <!-- Seção para Passo 1 -->
-                <div class="section" id="section1">
-                    <h2 class="section-title">Conceito</h2>
-
-                    <p>• Qual sentimento quero passar com a ilustração?</p>
-                    <p>• Qual história quero contar?</p>
-                    <p>• Qual a melhor maneira de transmitir isso?</p>
-                    <p>• Quais símbolos estarão visíveis?</p>
-                    <p>• Quais símbolos estarão ocultos?</p>
-                    <p>• Quais objetos não podem faltar na ilustração?</p>
-                    <p>• Quais objetos terão mais destaque na ilustração?</p>
-                    <p>• Conceitos:</p>
-                    <p>- Psicologia da forma (Definição dos sentimentos que a ilustração deve passar)</p>
-                    <p>- Semiótica</p>
-
-                    <h3 class="subtitle">- Psicologia da forma</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images1" value="imagens_img1.jpg"><img
-                                src="img/imagens_img1.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img2.jpg"><img
-                                src="img/imagens_img2.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img3.jpg"><img
-                                src="img/imagens_img3.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img4.jpg"><img
-                                src="img/imagens_img4.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img5.jpg"><img
-                                src="img/imagens_img5.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img6.jpg"><img
-                                src="img/imagens_img6.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img7.jpg"><img
-                                src="img/imagens_img7.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img8.jpg"><img
-                                src="img/imagens_img8.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img9.jpg"><img
-                                src="img/imagens_img9.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img10.jpg"><img
-                                src="img/imagens_img10.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img11.jpg"><img
-                                src="img/imagens_img11.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img12.jpg"><img
-                                src="img/imagens_img12.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images1" value="imagens_img13.jpg"><img
-                                src="img/imagens_img13.jpg" alt="Image 3"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Semiótica</h3>
-
-                    <div class="image-options semiotica-options">
-                        <label><input type="checkbox" name="images4" value="imagens_semiotica.jpg" checked=""><img
-                                src="img/imagens_semiotica.jpg" alt="Image 1">
-                        </label>
-
-                        <div class="semiose-alignment">
-                            <label><input type="checkbox" name="images1" value="imagens_semiotica2.jpg"><img
-                                    src="img/imagens_semiotica2.jpg" alt="Image 2"></label>
-                            <label><input type="checkbox" name="images1" value="imagens_semiotica3.jpg"><img
-                                    src="img/imagens_semiotica3.jpg" alt="Image 3"></label>
-                            <label><input type="checkbox" name="images1" value="imagens_semiotica4.jpg"><img
-                                    src="img/imagens_semiotica4.jpg" alt="Image 4"></label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Seção para Passo 2 -->
-                <div class="section" id="section2">
-                    <h2 class="section-title">Arquivo e fechamento</h2>
-
-                    <p>• Digital (RGB) ou impresso (CMYK)?</p>
-                    <p>• Dimensões do arquivo?</p>
-                    <p>• Sempre criar margens de segurança de +10 mm</p>
-                    <p>• Sempre usar 300 dpi</p>
-                    <p>• Adicionar 5 mm de sangria em cada lado (Impressão)</p>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images2" value="imagens_img1.jpg"><img
-                                src="img/imagens_img14.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img2.jpg"><img
-                                src="img/imagens_img15.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img3.jpg"><img
-                                src="img/imagens_img16.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img4.jpg"><img
-                                src="img/imagens_img17.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img1.jpg"><img
-                                src="img/imagens_img18.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img2.jpg"><img
-                                src="img/imagens_img19.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img3.jpg"><img
-                                src="img/imagens_img20.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img4.jpg"><img
-                                src="img/imagens_img21.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img5.jpg"><img
-                                src="img/imagens_img22.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img6.jpg"><img
-                                src="img/imagens_img23.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img7.jpg"><img
-                                src="img/imagens_img24.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img8.jpg"><img
-                                src="img/imagens_img25.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img9.jpg"><img
-                                src="img/imagens_img26.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img10.jpg"><img
-                                src="img/imagens_img27.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img11.jpg"><img
-                                src="img/imagens_img28.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img12.jpg"><img
-                                src="img/imagens_img29.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img13.jpg"><img
-                                src="img/imagens_img30.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img8.jpg"><img
-                                src="img/imagens_img31.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img9.jpg"><img
-                                src="img/imagens_img32.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img10.jpg"><img
-                                src="img/imagens_img33.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img11.jpg"><img
-                                src="img/imagens_img34.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img12.jpg"><img
-                                src="img/imagens_img35.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img12.jpg"><img
-                                src="img/imagens_img36.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img13.jpg"><img
-                                src="img/imagens_img67.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img13.jpg"><img
-                                src="img/imagens_img68.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img13.jpg"><img
-                                src="img/imagens_img69.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img13.jpg"><img
-                                src="img/imagens_img70.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images2" value="imagens_img13.jpg"><img
-                                src="img/imagens_img71.jpg" alt="Image 3"></label>
-                    </div>
-                </div>
-
-                <!-- Seção para Passo 3 -->
-                <div class="section" id="section3">
-                    <h2 class="section-title">Composição</h2>
-
-                    <p>• Como vou distribuir todos os elementos indispensáveis para a ilustração?</p>
-                    <p>• O que ficará mais visível</p>
-                    <p>• O que ficará mais escondido?</p>
-                    <p>• Quero algo mais parado ou mais movimentado?</p>
-                    <p>• Conceitos:</p>
-                    <p>- Equilíbrio visual</p>
-                    <p>- Gestalt</p>
-                    <p>- Hierarquia visual</p>
-
-                    <h3 class="subtitle">- Equilíbrio visual</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images3" value="imagens_img1.jpg"><img
-                                src="img/imagens_img37.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images3" value="imagens_img2.jpg"><img
-                                src="img/imagens_img38.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images3" value="imagens_img3.jpg"><img
-                                src="img/imagens_img39.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images3" value="imagens_img4.jpg"><img
-                                src="img/imagens_img40.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images3" value="imagens_img5.jpg"><img
-                                src="img/imagens_img41.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images3" value="imagens_img6.jpg"><img
-                                src="img/imagens_img42.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images3" value="imagens_img7.jpg"><img
-                                src="img/imagens_img43.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images3" value="imagens_img8.jpg"><img
-                                src="img/imagens_img44.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images3" value="imagens_img9.jpg"><img
-                                src="img/imagens_img45.jpg" alt="Image 3"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Gestalt</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images3" value="imagens_img1.jpg" checked=""><img
-                                src="img/imagens_gestalt.jpg" alt="Image 1"></label>
-
-                        <h3 class="subtitle">- Hirarquia visual</h3>
-
-                        <div class="image-options">
-                            <label><input type="checkbox" name="images3" value="imagens_img1.jpg" checked=""><img
-                                    src="img/imagens_hierarquia visual.jpg" alt="Image 1"></label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Seção para Passo 4 -->
-                <div class="section" id="section4">
-                    <h2 class="section-title">Rascunho</h2>
-
-                    <p>• Distribuição dos elementos principais</p>
-                    <p>• Pensar em maneiras de deixar a ilustração ainda mais dinâmica e atrativa</p>
-                    <p>• Conceitos:</p>
-                    <p>- Anatomia</p>
-                    <p>- Proporções</p>
-                    <p>- Criar movimento</p>
-                    <p>- Formas diferentes para objetos diferentes</p>
-                    <p>- Evitar tangência</p>
-                    <p>- Criar silhueta</p>
-                    <p>- Atmosfera</p>
-                    <p>- Perspectiva</p>
-
-                    <h3 class="subtitle">- rascunho</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images4" value="imagens_img1.jpg" checked=""><img
-                                src="img/imagens_rascunho.jpg" alt="Image 1"></label>
-
-                        <h3 class="subtitle">- Pespectiva</h3>
-
-                        <div class="image-options">
-                            <label><input type="checkbox" name="images4" value="imagens_img1.jpg"><img
-                                    src="img/imagens_perspectiva1.jpg" alt="Image 1"></label>
-                            <label><input type="checkbox" name="images4" value="imagens_img2.jpg"><img
-                                    src="img/imagens_perspectiva2.jpg" alt="Image 2"></label>
-                            <label><input type="checkbox" name="images4" value="imagens_img3.jpg"><img
-                                    src="img/imagens_perspectiva3.jpg" alt="Image 3"></label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Seção para Passo 5 -->
-                <div class="section" id="section5">
-                    <h2 class="section-title">Line Art</h2>
-
-                    <p>• Arte final</p>
-                    <p>• Traços grossos e finos como se usasse pincel de nanquim para desenhar</p>
-                    <p>• Traços com textura que represente um pincel no papel</p>
-                    <p>• Manter quinas (não fazer traços muito arredondados)</p>
-                    <p>• Usar camadas para separar a line art de cada objeto</p>
-                    <p>• Colorir os traços de acordo com a cor usada no objeto</p>
-                    <p>• Criar hachuras coloridas</p>
-
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images5" value="imagens_img1.jpg" checked=""><img
-                                src="img/imagens_lineart.jpg" alt="Image 1"></label>
-                    </div>
-                </div>
-
-                <!-- Seção para Passo 6 -->
-                <div class="section" id="section6">
-                    <h2 class="section-title">Blocagem</h2>
-
-                    <p>• Blocar partes do desenho para colorir de maneira mais prática e detalhada
-                    </p>
-                    <p>• Blocar partes do desenho para colorir de maneira mais prática e detalhada
-                    </p>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images6" value="imagens_img1.jpg" checked=""><img
-                                src="img/imagens_blocagem.jpg" alt="Image 1"></label>
-                    </div>
-                </div>
-
-                <!-- Seção para Passo 7 -->
-                <div class="section" id="section7">
-                    <h2 class="section-title">Textura</h2>
-
-                    <p>• Adicionar textura antes de colorir</p>
-                    <p>• Simular papel, tela etc.</p>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images7" value="imagens_img1.jpg" checked=""><img
-                                src="img/imagens_textura.jpg" alt="Image 1"></label>
-                    </div>
-                </div>
-
-                <!-- Seção para Passo 8 -->
-                <div class="section" id="section8">
-                    <h2 class="section-title">Coloração</h2>
-
-                    <p>• RGB ou CMYK</p>
-                    <p>• Colorir de acordo com a definição do conceito</p>
-                    <p>• Usar a textura ao meu favor</p>
-                    <p>• Conceitos:</p>
-                    <p>- Harmonia das cores</p>
-                    <p>- Psicologia das cores</p>
-                    <p>- Perspectiva tonal / atmosférica / aérea</p>
-                    <p>- Paleta de cores</p>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img1.jpg"><img
-                                src="img/imagens_img46.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img2.jpg"><img
-                                src="img/imagens_img47.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img3.jpg"><img
-                                src="img/imagens_img48.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img4.jpg"><img
-                                src="img/imagens_img49.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img1.jpg"><img
-                                src="img/imagens_img50.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img2.jpg"><img
-                                src="img/imagens_img51.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img3.jpg"><img
-                                src="img/imagens_img52.jpg" alt="Image 3" id="main-image">
-                        </label>
-                        <div class="image-alignment">
-                            <div class="column">
-                                <label><input type="checkbox" name="images8" value="imagens_semiotica2.jpg"><img
-                                        src="img/imagens_harmonia.jpg" alt="Harmonia"></label>
-                                <label><input type="checkbox" name="images8" value="imagens_semiotica3.jpg"><img
-                                        src="img/imagens_contraste.jpg" alt="Contraste"></label>
-                            </div>
-                            <div class="column">
-                                <label><input type="checkbox" name="images8" value="imagens_semiotica4.jpg"><img
-                                        src="img/imagens_fundo claro.jpg" alt="Fundo Claro"></label>
-                                <label><input type="checkbox" name="images8" value="imagens_semiotica4.jpg"><img
-                                        src="img/imagens_fundo escuro.jpg" alt="Fundo Escuro"></label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/imagens_img55.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/imagens_img56.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/imagens_img57.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/imagens_img58.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/imagens_img59.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/imagens_img60.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/imagens_img61.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/imagens_img62.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/imagens_img63.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/imagens_img64.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/imagens_img65.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/imagens_img66.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Azul</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_azul1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_azul2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_azul3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_azul4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_azul5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_azul6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_azul7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_azul8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_azul9.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_azul10.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_azul11.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_azul12.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_azul13.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_azul14.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_azul15.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_azul16.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_azul17.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_azul18.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Vermelho</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_vermelho1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_vermelho2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_vermelho3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_vermelho4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_vermelho5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_vermelho6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_vermelho7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_vermelho8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_vermelho9.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_vermelho10.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_vermelho11.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_vermelho12.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_vermelho13.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_vermelho14.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_vermelho15.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_vermelho16.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_vermelho17.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_vermelho18.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Amarelo</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_amarelo1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_amarelo2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_amarelo3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_amarelo4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_amarelo5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_amarelo6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_amarelo7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_amarelo8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_amarelo9.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Verde</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_Verde1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_Verde2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Verde3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_Verde4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_Verde5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_Verde6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_Verde7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_Verde8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Verde9.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Branco</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_Branco1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_Branco2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Branco3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_Branco4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_Branco5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_Branco6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_Branco7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_Branco8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Branco9.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Cinza</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_Cinza1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_Cinza2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Cinza3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_Cinza4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_Cinza5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_Cinza6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_Cinza7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_Cinza8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Cinza9.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Violeta</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_Violeta1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_Violeta2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Violeta3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_Violeta4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_Violeta5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_Violeta6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_Violeta7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_Violeta8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Violeta9.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Rosa</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_Rosa1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_Rosa2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Rosa3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_Rosa4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_Rosa5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_Rosa6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_Rosa7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_Rosa8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Rosa9.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Laranja</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_Laranja1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_Laranja2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Laranja3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_Laranja4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_Laranja5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_Laranja6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_Laranja7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_Laranja8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Laranja9.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Marrom</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_Marrom1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_Marrom2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Marrom3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_Marrom4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_Marrom5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_Marrom6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_Marrom7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_Marrom8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Marrom9.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Ouro prata</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_Ouro prata1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_Ouro prata2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Ouro prata3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_Ouro prata4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_Ouro prata5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_Ouro prata6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_Ouro prata7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_Ouro prata8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Ouro prata9.jpg" alt="Image 2"></label>
-                    </div>
-
-                    <h3 class="subtitle">- Psicologicamente opostas</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images8" value="imagens_img6.jpg"><img
-                                src="img/paletas_Psicologicamente opostas1.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img7.jpg"><img
-                                src="img/paletas_Psicologicamente opostas2.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Psicologicamente opostas3.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img9.jpg"><img
-                                src="img/paletas_Psicologicamente opostas4.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img10.jpg"><img
-                                src="img/paletas_Psicologicamente opostas5.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img11.jpg"><img
-                                src="img/paletas_Psicologicamente opostas6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img12.jpg"><img
-                                src="img/paletas_Psicologicamente opostas7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img13.jpg"><img
-                                src="img/paletas_Psicologicamente opostas8.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Psicologicamente opostas9.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images8" value="imagens_img8.jpg"><img
-                                src="img/paletas_Psicologicamente opostas10.jpg" alt="Image 2"></label>
-                    </div>
-                </div>
-
-                <!-- Seção para Passo 9 -->
-                <div class="section" id="section9">
-                    <h2 class="section-title">Luz e sombra</h2>
-
-                    <p>• Respeitar o tipo de pintura feita no desenho (se o desenho tiver
-                        cor chapada, sem degradê, fazer a luz também chapada e com pinceis
-                        mais duros. O mesmo para o oposto)</p>
-                    <p>• Escala de valor tonal usando a paleta de cores</p>
-                    <p>• Usar luzes coloridas para deixar a arte mais interessante</p>
-                    <p>• Texturizar a luz</p>
-                    <p>• Usar brilho</p>
-                    <p>• Usar a luz para destacar objetos</p>
-                    <p>• Objetos refletem suas cores em outros objetos</p>
-                    <p>• Inventar e pensar em maneiras de deixar a luz mais atraente.</p>
-
-                    <h3 class="subtitle">- Direção da luz</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images9" value="imagens_img1.jpg"><img
-                                src="img/imagens_luz e sombra1.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img2.jpg"><img
-                                src="img/imagens_luz e sombra2.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img3.jpg"><img
-                                src="img/imagens_luz e sombra3.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img4.jpg"><img
-                                src="img/imagens_luz e sombra4.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img1.jpg"><img
-                                src="img/imagens_luz e sombra5.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img2.jpg"><img
-                                src="img/imagens_luz e sombra6.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img3.jpg"><img
-                                src="img/imagens_luz e sombra7.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img4.jpg"><img
-                                src="img/imagens_luz e sombra8.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img1.jpg"><img
-                                src="img/imagens_luz e sombra18.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img2.jpg"><img
-                                src="img/imagens_luz e sombra19.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img3.jpg"><img
-                                src="img/imagens_luz e sombra20.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img4.jpg"><img
-                                src="img/imagens_luz e sombra21.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img1.jpg"><img
-                                src="img/imagens_luz e sombra22.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img2.jpg"><img
-                                src="img/imagens_luz e sombra23.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img3.jpg"><img
-                                src="img/imagens_luz e sombra24.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img4.jpg"><img
-                                src="img/imagens_luz e sombra25.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img4.jpg"><img
-                                src="img/imagens_luz e sombra26.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img1.jpg"><img
-                                src="img/imagens_luz e sombra27.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img2.jpg"><img
-                                src="img/imagens_luz e sombra28.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img3.jpg"><img
-                                src="img/imagens_luz e sombra29.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img4.jpg"><img
-                                src="img/imagens_luz e sombra30.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img1.jpg"><img
-                                src="img/imagens_luz e sombra31.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img2.jpg"><img
-                                src="img/imagens_luz e sombra32.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img3.jpg"><img
-                                src="img/imagens_luz e sombra33.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img4.jpg"><img
-                                src="img/imagens_luz e sombra34.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img4.jpg"><img
-                                src="img/imagens_luz e sombra35.jpg" alt="Image 4"></label>
-
-
-                    </div>
-
-                    <h3 class="subtitle">- Tipo de luz</h3>
-
-                    <div class="image-options">
-                        <label><input type="checkbox" name="images9" value="imagens_img1.jpg"><img
-                                src="img/imagens_luz e sombra9.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img2.jpg"><img
-                                src="img/imagens_luz e sombra10.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img3.jpg"><img
-                                src="img/imagens_luz e sombra11.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img4.jpg"><img
-                                src="img/imagens_luz e sombra12.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img3.jpg"><img
-                                src="img/imagens_luz e sombra13.jpg" alt="Image 3"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img4.jpg"><img
-                                src="img/imagens_luz e sombra14.jpg" alt="Image 4"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img1.jpg"><img
-                                src="img/imagens_luz e sombra15.jpg" alt="Image 1"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img2.jpg"><img
-                                src="img/imagens_luz e sombra16.jpg" alt="Image 2"></label>
-                        <label><input type="checkbox" name="images9" value="imagens_img3.jpg"><img
-                                src="img/imagens_luz e sombra17.jpg" alt="Image 3"></label>
-                    </div>
-                </div>
-
-
-                <div class="image-options">
-                    <label><input type="checkbox" name="images9" value="imagens_img1.jpg" checked=""><img
-                            src="img/imagens_perspectiva tonal.jpg" alt="Image 1"></label>
-                    <label><input type="checkbox" name="images9" value="imagens_img1.jpg" checked=""><img
-                            src="img/imagens_footer-image.jpg" alt="Image 1"></label>
-                </div>
-
-            </div>
-        </form>
-
-        <button type="button" id="submitBtn" class="submit-button">Gerar PDF</button>
-
-    </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="script.js"></script>
 
 </body>

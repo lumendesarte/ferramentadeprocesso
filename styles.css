@@ -41,11 +41,10 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: none; /* Desativa o redimensionamento manual */
-    overflow: hidden; /* Esconde a barra de rolagem */
 }
 
 .sections {
-    margin-top: 20px;
+    margin-top: 0;
 }
 
 .section {

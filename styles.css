@@ -6,6 +6,41 @@ body {
     padding: 0;
 }
 
+p {
+    font-size: 15px;
+    margin: 0;                /* Remover margens */
+    color: #3a3837;
+    background-color: #F2ECDD; /* Fundo colorido */
+    padding: 10px;            /* Espaçamento interno */
+    border-radius: 5px;       /* Bordas arredondadas */
+    line-height: 1.5;         /* Altura da linha para espaçamento */
+}
+
+.section p + p {
+    margin-top: -10px;  /* Ajustar a margem superior para sobrepor o padding inferior */
+
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #FDC219;
+    background-color: #FFFFFF; /* Fundo colorido */
+    padding: 10px;            /* Espaçamento interno */
+    border-radius: 5px;       /* Bordas arredondadas */
+}
+
+@media (max-width: 768px) {
+    p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -41,10 +76,6 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: none; /* Desativa o redimensionamento manual */
-}
-
-.sections {
-    margin-top: 0;
 }
 
 .section {
@@ -114,20 +145,7 @@ body {
     background-color: #0056b3;
 }
 
-p {
-    font-size: 15px;
-    margin: 0;                /* Remover margens */
-    color: #3a3837;
-    background-color: #F2ECDD; /* Fundo colorido */
-    padding: 10px;            /* Espaçamento interno */
-    border-radius: 5px;       /* Bordas arredondadas */
-    line-height: 1.5;         /* Altura da linha para espaçamento */
-}
 
-.section p + p {
-    margin-top: -10px;  /* Ajustar a margem superior para sobrepor o padding inferior */
-
-}
 .semiotica-options {
     display: flex;
     align-items: flex-start;
@@ -166,12 +184,4 @@ p {
     #main-image {
         width: 100%; /* Ajuste conforme necessário */
 
-}
-.subtitle {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #FDC219;
-    background-color: #FFFFFF; /* Fundo colorido */
-    padding: 10px;            /* Espaçamento interno */
-    border-radius: 5px;       /* Bordas arredondadas */
 }
